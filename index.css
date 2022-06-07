@@ -550,19 +550,31 @@ button{
     margin-top: 80px;
 }
 
+
 .info-wrap{
     width: 1200px;
     padding: 0 22px;
     margin: 120px auto 150px auto;
+}
+.info_l{
+    float: left;
+}
+.info_r{
+    float: right;
+    width: 120px;
+    padding-top: 60px;
+}
+
+.info_r img{
+    width: 100%;
 }
 
 .info_logo{
     margin: 0 0 20px 0;
     width: 160px;
 }
-
 .info_logo img{
-    width:100%;
+    width: 100%;
 }
 
 .info_txt{
@@ -582,6 +594,10 @@ button{
     line-height: 26px;
     width: 350px;
     margin-bottom: 110px;
+}
+
+@media screen and (max-width: 1200px){
+    .info_r{display: none;}
 }
 
 @media screen and (max-width: 700px){
