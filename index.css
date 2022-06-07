@@ -558,6 +558,11 @@ button{
 
 .info_logo{
     margin: 0 0 20px 0;
+    width: 160px;
+}
+
+.info_logo img{
+    width:100%;
 }
 
 .info_txt{
