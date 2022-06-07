@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <meta charset="utf-8">
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="./xdworks_index.css">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"/>
-
-        <!-- slier -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
-                $('.slider').bxSlider({
-                          auto: true,
-                          speed : 300,
-                          pause : 4500,
-                          controls : false,
-                          mode : 'horizontal',
-                          easing: 'swing',
-                          autoHover: true,
-                          pager: true,
-                          touchEnabled: true,
-                          slideWidth: 1200
-                });             
-            });            
+                
+                // Nav Open
+                $(".btn-menu").on("click", function(){
+                    $("nav.nav").addClass("open");
+                    $(".btn-menu").css({"display":"none"});
+                })
+                
+                // Nav Close
+                $("nav.nav .btn-close").on("click", function(){
+                    $("nav.nav").removeClass("open");
+                    $(".btn-menu").css({"display":""});
+                })                    
+                
+                
+                
+                $("nav.nav ul li a").click(function(){
+                    if($(window).width() < 1024){
+                        $("nav.nav").removeClass("open");
+                        $(".btn-menu").css({"display":""});
+                    }
+                })
+            })
         </script>
-        <!-- /slier -->
+<!--        <style>html {scroll-behavior: smooth}</style>-->
     </head>
     
     <body>
@@ -36,36 +42,62 @@
 <!--  banner  -->
     <div class="main-banner">
       <div class="banner-cont">
-        <div class="banner-img">
-            <main id="wrap">
-                <div class="circle-wrap">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle2"></div>
-                    <div class="circle3"></div>
-                    <div class="circle4"></div>
-                </div>
-                <div class="circle-txt">
-                    <div class="text"><img src="./img/img_txt01.png" alt="Deep learning"></div>
-                    <div class="text"><img src="./img/img_txt02.png" alt="Visualization" style="width: 85%;"></div>
-                    <div class="text"><img src="./img/img_txt03.png" alt="Image Analysis" style="width: 95%;"></div>
-                </div>
-            </main>
+          <div class="banner-img">
+              <main id="wrap">
+                  <div class="circle-wrap">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle2"></div>
+                      <div class="circle3"></div>
+                      <div class="circle4"></div>
+                  </div>
+                  <div class="circle-txt">
+                      <div class="text"><img src="./img/img_txt01.png" alt="Pose estimation"></div>
+                      <div class="text"><img src="./img/img_txt02.png" alt="Visualization" style="width: 85%;"></div>
+                      <div class="text"><img src="./img/img_txt03.png" alt="Image Analysis" style="width: 95%;"></div>
+                      <div class="text"><img src="./img/img_txt04.png" alt="Behavior Analysis" style="width: 95%;"></div>
+                  </div>
+              </main>
+          <div class="nav-line"></div>
           </div>
+          <div>
+              <div class="header">
+                  <a href="./index.html" class="header-logo"><img src="./img/img_xdlogo.png"></a>
+                  <a href="./index.html" class="header-logo_mo"><img src="./img/img_xdlogo.png"></a>              
+              </div>
+              <button class="btn-menu"><span class="material-symbols-outlined">menu</span></button>
+              <nav class="nav">
+                  <div class="display-table">
+                      <div class="display-table-cell">
+                          <!-- .btn-close 클릭시 .nav에 .open이 삭제 -->
+                          <button class="btn-close"><span class="material-symbols-outlined">close</span></button>
+                          <ul>
+                              <!-- .nav__menu 클릭시 .active 클래스가 추가 -->
+                              <li class="nav__menu"><a href="#menu1">Introduce</a></li>
+                              <li class="nav__menu"><a href="#menu2">AI Golf Solution</a></li>
+                              <li class="nav__menu"><a href="#menu3">AI RCWS Solution</a></li>
+                              <li class="nav__menu"><a href="#menu4">Annotation Tool</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </nav>
+          </div>
+          
           <div class="banner-title">
             <div class="title-wrap">    
-                <img src="./img/img_xdlogo.png" class="xdlogo" alt="XDWORKS">
-                <h2 class="banner-txt_pc">Machine Vision &amp; Deep Learning</h2>
-                <h2 class="banner-txt_mo">Machine Vision<br>&amp; Deep Learning</h2>
+                <!--<img src="./img/img_xdlogo.png" class="xdlogo" alt="XDWORKS">-->
+                <h2 class="banner-tit">AI Technologies</h2>
+                <h3 class="banner-txt_pc">Deep Learning &amp; Machine Vision</h3>
+                <h3 class="banner-txt_mo">Deep Learning<br>&amp; Machine Vision</h3>
             </div>
           </div>
       </div>
@@ -74,34 +106,26 @@
      
      
 <!-- XD-Introduce -->
+    <a name="menu1" class="scroll_position position01"></a>
     <section class="XD-Introduce">  
-        <h3 class="cont-tit">Introduce<img src="./img/tit-dot.png" class="tit-dot"></h3>
-        <ul class="introduce-wrap clearfix">
-            <li class="scroll-animation"><img src="./img/img_02-1.png" alt="Deep Learning Model Design"></li>
-            <li class="scroll-animation"><img src="./img/img_02-2.png" alt="Image Analysis"></li>
-            <li class="scroll-animation"><img src="./img/img_02-3.png" alt="Motion Recognition"></li>
-            <li class="scroll-animation"><img src="./img/img_02-4.png" alt="Visualization"></li>
-        </ul>
-        <p class="introduce-txt_pc"> <b style="font-weight: 500;">(주)XDWORKS</b>는 <strong style="font-weight: 400; color: #f19559;">인공지능 융합 기술</strong> 및 
-            <strong style="font-weight: 400; color: #f19559;">시각화 기술</strong>을 <br>
-            연구 개발하는 벤처기업으로 다양한 제품 양산화를 통해 R&amp;D 혁신기업으로 성장해 가고 있습니다.<br>
-            <br>
-            당사는 AI Solution을 필요로 하는 고객들을 위해<br>
-            <strong style="font-weight: 400; color: #f19559;">요구사항 분석, 데이터 구축 및 전처리, 모델 설계 및 학습, 적용 및 분석, AI 시스템 구축까지의</strong><br>
+        <h3 class="cont-tit">Who we are<img src="./img/tit-dot.png" class="tit-dot"></h3>
+        <p class="introduce-txt_pc"> <b style="font-weight: 400;">(주)XDWORKS</b>는 <strong style="font-weight: 400;">인공지능 융합 기술</strong> 및 
+            <strong style="font-weight: 400;">시각화 기술</strong>을 연구 개발하는 벤처기업으로 <br>다양한 제품 양산화를 통해 R&amp;D 혁신기업으로 성장해 가고 있습니다.<br>
+            <br>  AI Solution을 필요로 하는 고객들을 위해<br>
+            <strong style="font-weight: 400;">요구사항 분석, 데이터 구축 및 전처리, 모델 설계 및 학습, 적용 및 분석, AI 시스템 구축</strong>까지의<br>
             전과정을 one-stop service로 지원하고 있습니다.
         </p>
         <p class="introduce-txt_mo"> <b style="font-weight: 500;">(주)XDWORKS</b>는<br>
-           <strong style="font-weight: 400; color: #f19559;">인공지능 융합 기술</strong> 및 
-            <strong style="font-weight: 400; color: #f19559;">시각화 기술</strong>을 <br>
+           <strong style="font-weight: 400;">인공지능 융합 기술</strong> 및 
+            <strong style="font-weight: 400;">시각화 기술</strong>을 <br>
             연구 개발하는 벤처기업으로<br>
             다양한 제품 양산화를 통해<br>
             R&amp;D 혁신기업으로 성장해 가고 있습니다.<br>
             <br>
-            당사는 AI Solution을<br>
-            필요로 하는 고객들을 위해<br>
-            <strong style="font-weight: 400; color: #f19559;">요구사항 분석, 데이터 구축 및 전처리,<br>
-            모델 설계 및 학습, 적용 및 분석,<br> AI 시스템 구축까지의</strong><br>
-            전과정을 one-stop service로<br>
+            AI 솔루션을 필요로 하는 고객들을 위해<br>
+            요구사항 분석, 데이터 구축 및 전처리,<br>
+            모델 설계 및 학습, 적용 및 분석,<br> AI 시스템 구축까지의
+            전과정을<br> one-stop service로
             지원하고 있습니다.
         </p>
     </section>
@@ -109,129 +133,55 @@
 
 
 <!-- XD'-Solutions -->
+    <a name="menu2" class="scroll_position position02"></a>
     <section class="XD-Solutions">
-        <h3 class="cont-tit">XD' Solutions<img src="./img/tit-dot.png" class="tit-dot"></h3>
-        <div class="solution-tab">
-            <ul class="area clearfix">                
-                <li class=""><a href="#tab01">Golf AI Solution</a></li>
-                <li class=""><a href="#tab02">AI Annotation Solution</a></li>
-                <li class="menu-fin"><a href="#tab03">RCWS AI Solution</a></li>
-            </ul>
-            <ul class="area_mo clearfix">                
-                <li class=""><a href="#tab01">Golf<br>AI Solution</a></li>
-                <li class=""><a href="#tab02">AI Annotation<br>Solution</a></li>
-                <li class="menu-fin"><a href="#tab03">RCWS<br>AI Solution</a></li>
-            </ul>
+        <h3 class="cont-tit" ><div calss="cont-tit_top">TECH <strong>01</strong></div>AI Golf Solutions</h3>
+        <div class="solution_contents">
+             <div class="icon-wrap" style="display: inline-block; margin-top: 15px;">
+                 <ul class="clearfix">
+                     <li class="icon-box">
+                         <a>
+                             <img src="./img/img_icon01.png" alt="detection">
+                             <p><b style="font-weight: 300; font-size: 17px; color: #e0e0e0;">실시간 객체 검출 및 추적</b><br>realtime object detection &amp; tracking</p>
+                         </a>  
+                     </li>
+                     <li class="icon-box">
+                         <a>
+                             <img src="./img/img_icon02.png" alt="pose estimation">
+                             <p><b style="font-weight: 300; font-size: 17px; color: #e0e0e0;">2차원 및 3차원 자세 추정</b><br>2D &amp; 3D pose estimation</p>
+                         </a>
+                     </li>
+                     <li class="icon-box">
+                         <a>
+                             <img src="./img/img_icon03.png" alt="3D visualization">
+                             <p><b style="font-weight: 300; font-size: 17px; color: #e0e0e0;">3차원 시각화 및 시뮬레이션</b><br>3D visualization &amp; simulation</p>
+                         </a> 
+                     </li>
+                 </ul>
+             </div>
+             <p class="solution_txt">
+             비디오 스트림에서 골프 스윙 구간을 자동으로 검출하고<br>
+             골퍼의 address, top of backswing, impact, finish 자세들을<br>
+             입체적으로 분석 후 이를 시각화 해주는 one-stop solution 입니다.<br>
+             <br>
+             <strong style="font-weight: 400;">Golf swing detector, Golf pose analyzer, Golf pose estimator, Swing simulator</strong><br> 
+             모듈로 구성되어 있으며,&nbsp;AI가 적용된 고성능의 영상처리 모듈들도 제공합니다.<br><br><br>
+             </p>
+             <p class="solution_txt_mo">
+             비디오 스트림에서<br> 골프 스윙 구간을
+             자동으로 검출하고<br>
+             골퍼의 자세들을 입체적으로 분석 후<br>
+             시각화 해주는 one-stop solution 입니다.<br>
+             <br>
+             <strong style="font-weight: 400;">Golf swing detector,<br>Golf pose analyzer,<br>Golf pose estimator,<br>Swing simulator</strong> 모듈로<br>
+             구성되어 있으며,&nbsp;AI가 적용된<br>
+             고성능의 영상처리 모듈들도 제공합니다.
+             </p>
         </div>
-        
-        <div id="tab01" class="solution_contents">
-            <div class="solution_box">
-                <div class="solution_tit">
-                    <div class="tit_num">01</div>
-                    <div class="tit_txt">Golf AI Solution</div>
-                </div>
-                <div class="icon-wrap">
-                    <ul class="clearfix">
-                        <li class="icon-box">
-                            <a>
-                                <img src="./img/img_icon01.png" alt="detection">
-                                <p><b style="font-weight: 300; font-size: 17px; color: #e0e0e0;">실시간 객체 검출 및 추적</b><br>realtime object detection &amp; tracking</p>
-                            </a>  
-                        </li>
-                        <li class="icon-box">
-                            <a>
-                                <img src="./img/img_icon02.png" alt="pose estimation">
-                                <p><b style="font-weight: 300; font-size: 17px; color: #e0e0e0;">2차원 및 3차원 자세 추정</b><br>2D &amp; 3D pose estimation</p>
-                            </a>
-                        </li>
-                        <li class="icon-box">
-                            <a>
-                                <img src="./img/img_icon03.png" alt="3D visualization">
-                                <p><b style="font-weight: 300; font-size: 17px; color: #e0e0e0;">3차원 시각화 및 시뮬레이션</b><br>3D visualization &amp; simulation</p>
-                            </a> 
-                        </li>
-                    </ul>
-                </div>
-                <p class="solution_txt">
-                비디오 스트림에서 골프 스윙 구간을 자동으로 검출하고<br>
-                골퍼의 address, top of backswing, impact, finish 자세들을<br>
-                입체적으로 분석 후 이를 시각화 해주는 one-stop solution 입니다.<br>
-                <br>
-                <strong style="font-weight: 400; color: #f19559;">Golf swing detector, Golf pose analyzer, Golf pose estimator, Swing simulator</strong><br> 
-                모듈로 구성되어 있으며,&nbsp;AI가 적용된 고성능의 영상처리 모듈들도 제공합니다.
-                </p>
-                <p class="solution_txt_mo">
-                비디오 스트림에서<br> 골프 스윙 구간을
-                자동으로 검출하고<br>
-                골퍼의 자세들을 입체적으로 분석 후<br>
-                시각화 해주는 one-stop solution 입니다.<br>
-                <br>
-                <strong style="font-weight: 400; color: #f19559;">Golf swing detector,<br>Golf pose analyzer,<br>Golf pose estimator,<br>Swing simulator</strong> 모듈로<br>
-                구성되어 있으며,&nbsp;AI가 적용된<br>
-                고성능의 영상처리 모듈들도 제공합니다.
-                </p>
-                <!-- slider -->
-                <div class="img-slider">
-                    <div class="solution1_img slider">
-                        <div class="slider-img"><img src="./img/img_03-1.png"></div>
-                        <div class="slider-img"><img src="./img/img_03-2.png"></div>
-                        <div class="slider-img"><img src="./img/img_03-3.png"></div>
-                        <div class="slider-img"><img src="./img/img_03-4.png"></div>
-                        <div class="slider-img"><img src="./img/img_03-5.png"></div>    
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="tab02" class="solution_contents">
-            <div class="solution_box">
-                <div class="solution_tit">
-                    <div class="tit_num">02</div>
-                    <div class="tit_txt">AI Annotation Solution</div>
-                </div>
-                <p class="solution_txt">
-                XDWORKS의 Annotation Solution은 AI 기술들을 접목하여<br>
-                <strong style="font-weight: 400; color: #f19559;">학습 데이터셋을 쉽고 정확하게 생성하고 검증할 수 있는 솔루션</strong> 입니다.<br>
-                XD-annotator는 인공지능 학습 데이터셋에 의해 발생할 수 있는 모델 성능 저하를 최소화하고<br>
-                모델 성능 분석의 용이성과 정확성을 향상시킬 수 있는 반자동화된 기능들을 제공합니다.
-                </p>
-                <p class="solution_txt_mo">
-                XDWORKS의 Annotation Solution은<br>AI 기술들을 접목하여<br>
-                <strong style="font-weight: 400; color: #f19559;">학습 데이터셋을 쉽고 정확하게 생성하고<br>
-                검증할 수 있는 솔루션</strong> 입니다.<br>
-                XD-annotator는 학습 데이터셋에 의해<br>
-                발생할 수 있는 모델 성능 저하를<br>
-                최소화하고 모델 성능 분석의 용이성과<br>
-                정확성을 향상시킬 수 있는<br>반자동화된 기능들을 제공합니다.
-                </p>
-                <div class="solution2_img">
-                    <img src="./img/img_04.png" style="margin-left: 5px;" alt="XD-annotator">
-                </div>
-                <div class="btn-wrap">
-                    <div class="btn-view"><a href="https://kdata.or.kr/datavoucher/is/selectPortalFileDetail.do?rcpnYear=2021&brno=1238619674&sprnSctrCd=P01014002&prdcId=" target="_blank">서비스 보러가기</a></div>
-                    <p>※ 당사는 AI바우처 공급업체 및 데이터바우처 가공서비스 업체로 등록되어 있습니다.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div id="tab03" class="solution_contents">
-            <div class="solution_box">
-                <div class="solution_tit">
-                    <div class="tit_num">03</div>
-                    <div class="tit_txt">RCWS AI Solution</div>
-                </div>
-                <p class="solution_txt">
-                    XDWORKS의 RCWS AI Solution은 <strong style="font-weight: 400; color: #f19559;">장갑차, 자주포, 전술차량, 무인전투체계에 탑재</strong>할 수 있는<br>
-                저전력 고성능의 AI edge device solution으로 다양한 확장 plugin들을 제공합니다. 
-                </p>
-                <p class="solution_txt_mo">
-                XDWORKS의 RCWS AI Solution은<br>
-                <strong style="font-weight: 400; color: #f19559;">장갑차, 자주포, 전술차량, 무인전투체계</strong>에<br>
-                탑재할 수 있는 저전력 고성능의<br>
-                AI edge device solution 으로<br>
-                다양한 확장 plugin들을 제공합니다. 
-                </p>
-                <div class="icon-wrap wrap03">
+        <a name="menu3" class="scroll_position position03"></a>
+        <h3 class="cont-tit"><div calss="cont-tit_top">TECH <strong>02</strong></div>AI RCWS Solution</h3>
+        <div class="solution_contents">
+            <div class="icon-wrap wrap03">
                     <ul class="clearfix">
                         <li class="icon-box">
                             <a>
@@ -267,9 +217,49 @@
                         </li>
                     </ul>
                 </div>
+                <p class="solution_txt">
+                    XDWORKS의 RCWS AI Solution은 <strong style="font-weight: 400;">장갑차, 자주포, 전술차량, 무인전투체계에 탑재</strong>할 수 있는<br>저전력 고성능의 AI edge device solution으로 다양한 확장 plugin들을 제공합니다. 
+                </p>
+                <p class="solution_txt_mo">
+                XDWORKS의 RCWS AI Solution은<br>
+                <strong style="font-weight: 400; color: #f19559;">장갑차, 자주포, 전술차량, 무인전투체계</strong>에<br>
+                탑재할 수 있는 저전력 고성능의<br>
+                AI edge device solution 으로<br>
+                다양한 확장 plugin들을 제공합니다. 
+                </p>
             </div>
-        </div>     
     </section>
+    <section class="XD-product">
+        <a name="menu4" class="scroll_position position04"></a>
+        <h3 class="cont-tit"><div calss="cont-tit_top">PRODUCT</div>Annotation Tool</h3>
+        <div class="solution_box">
+            <p class="solution_txt product_txt">
+            XDWORKS의 Annotation Solution은 AI 기술들을 접목하여<br>
+            <strong style="font-weight: 400;">학습 데이터셋을 쉽고 정확하게 생성하고 검증할 수 있는 솔루션</strong> 입니다.<br>
+            XD-annotator는 인공지능 학습 데이터셋에 의해 발생할 수 있는 모델 성능 저하를 최소화하고<br>
+            모델 성능 분석의 용이성과 정확성을 향상시킬 수 있는 반자동화된 기능들을 제공합니다.
+            </p>
+            <p class="solution_txt_mo product_txt">
+            XDWORKS의 Annotation Solution은<br>AI 기술들을 접목하여<br>
+            <strong style="font-weight: 400;">학습 데이터셋을 쉽고 정확하게 생성하고<br>
+            검증할 수 있는 솔루션</strong> 입니다.<br>
+            XD-annotator는 학습 데이터셋에 의해<br>
+            발생할 수 있는 모델 성능 저하를<br>
+            최소화하고 모델 성능 분석의 용이성과<br>
+            정확성을 향상시킬 수 있는<br>반자동화된 기능들을 제공합니다.
+            </p>
+            <div class="product_img"> 
+                <img src="./img/img_05.png" style="margin-left: 5px;" alt="XD-annotator">
+            </div>
+            <div class="btn-wrap">
+                <div class="btn-view"><a href="https://kdata.or.kr/datavoucher/is/selectPortalFileDetail.do" target="_blank">서비스 보러가기</a></div>
+                <p class="txt_aisub-pc">※ 당사는 AI바우처 공급업체 및 데이터바우처 가공서비스 업체로 등록되어 있습니다.</p>
+                <p class="txt_aisub-mo">※ 당사는 AI바우처 공급업체 및 <br>데이터바우처 가공서비스 업체로 등록되어 있습니다.</p>
+            </div>
+        </div>
+    </section>
+        
+
 <!-- XD'-Solutions fin -->
    
 <!-- XD-info -->
