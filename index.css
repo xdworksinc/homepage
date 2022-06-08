@@ -305,7 +305,7 @@ button{
 .XD-Introduce{
     text-align: center;
     border-bottom: 10px solid #12121a;
-    margin-bottom: 120px;
+    margin-bottom: 140px;
 }
 
 .introduce-txt_pc{
@@ -315,7 +315,7 @@ button{
     font-weight: 200;
     line-height: 1.7;
     color:#dedede;
-    margin-bottom: 245px;
+    margin-bottom: 240px;
     padding: 0 60px;
 }
 
@@ -346,7 +346,7 @@ button{
 /* XD'-Solutions */
 .XD-Solutions{
     height: inherit;
-    margin: 0px 0 90px 0;
+    margin-bottom: 140px;
     box-sizing: border-box;
     border-bottom: 10px solid #12121a;
 }
@@ -459,7 +459,6 @@ button{
     font-weight: 100;
     font-size: 15px;
     color: #aaa;
-    margin-bottom: 120px;
     padding: 0 22px;
 }
 
@@ -541,13 +540,13 @@ button{
     display: inline-block;
     width: 100%;
     background-color: #0c0c11;
-    margin-top: 150px;
+    margin-top: 240px;
 }
 .XD-info_mo{
     display: none;
     width: 100%;
     background-color: #0c0c11;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 
@@ -767,8 +766,8 @@ button{
 
 @media screen and (max-width: 1920px){
     .position01 {margin-top: -500px; padding-top: 450px;}
-    .introduce-txt_pc {margin-bottom: 240px;}
-    .solution_txt {margin-bottom: 240px;}
+    .introduce-txt_pc {margin-bottom: 220px;}
+    .solution_txt {margin-bottom: 220px;}
     .product_txt{margin: -10px auto 30px auto;}
 /*    .XD-Introduce {margin-bottom: 70px;}*/
 }
