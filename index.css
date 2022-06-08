@@ -28,7 +28,7 @@ button{
     font-family: inherit;
 }
 
-::selection {background-color: rgba(246,161,105,0.6);}
+::selection {background-color: rgba(242,155,100,0.55);}
 
 .display-table {
 	display: table;
@@ -143,7 +143,7 @@ button{
     top:0;
     right: -100%;
     z-index: 102;
-    transition: all .2s;
+    transition: all .25s;
 }
 .nav.open {right: 0;}
 
@@ -316,7 +316,7 @@ button{
     line-height: 1.7;
     color:#dedede;
     margin-bottom: 300px;
-    padding: 0 22px;
+    padding: 0 60px;
 }
 
 .introduce-txt_mo{
@@ -417,7 +417,7 @@ button{
 
 .solution_txt{
     margin: 60px auto 240px auto;
-    padding: 0 22px;
+    padding: 0 45px;
     text-align: center;
     font-family: 'Pretendard','Open-Sans','Noto-Sans';
     font-size: 18px;
@@ -561,7 +561,7 @@ button{
 }
 .info_r{
     float: right;
-    width: 120px;
+    width: 140px;
     padding-top: 60px;
 }
 
@@ -715,9 +715,9 @@ button{
 .circle4 {animation: ani03 3s 2s infinite alternate;}
 
 .text:first-child {animation: ani04 3s 1s infinite alternate; position: absolute; top: 801px; left: 15%;}
-.text:nth-child(2) {animation: ani04 2s 0.5s infinite alternate; position: absolute; top: 700px; left: 53.3%;}
-.text:nth-child(3) {animation: ani04 3s 2s infinite alternate; position: absolute; top: 530px; left: 38.2%;}
-.text:nth-child(4) {animation: ani04 1.5s 1s infinite alternate; position: absolute; top: 645px; left: 71.4%;}
+.text:nth-child(2) {animation: ani04 3s 2s infinite alternate; position: absolute; top: 530px; left: 38.2%;}
+.text:nth-child(3) {animation: ani04 1.5s 1s infinite alternate; position: absolute; top: 645px; left: 71.4%;}
+.text:nth-child(4) {animation: ani04 2s 0.5s infinite alternate; position: absolute; top: 700px; left: 53.3%;}
 
 
 @keyframes ani01 {
