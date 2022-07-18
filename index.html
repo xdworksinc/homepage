@@ -2,43 +2,75 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"/>
+        <meta name="keywords" content="XD, XDWORKS, 엑스디웍스, XGA, AI, AI Solution, AI Golf, RCWS, 인공지능, anotator, annotation, analysis, visualization, pose estimation">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>
+        <script type="text/javascript">
+            // 우클릭 방지
+            document.oncontextmenu = function(){return false;}
+            // F12 버튼 방지
             $(document).ready(function(){
+                $(document).bind('keydown',function(e){
+                    if ( e.keyCode == 123 /* F12 */) {
+                        e.preventDefault();
+                        e.returnValue = false;
+                    }
+                });
+
+                // Language toggle
+                $(".btn-lang").click(function(event){
+                    event.stopPropagation();
+                    $(".box-lang").toggle();
+                });
                 
+                $(document).click(function(){
+                    $(".box-lang").hide();
+                });
+                                
+                $(".lang-kr").on("click", function(){
+                    $(".lang-kr").addClass("is-active");
+                    $(".lang-en").removeClass("is-active");
+                });
+                
+                $(".lang-en").on("click", function(){
+                    $(".lang-en").addClass("is-active");
+                    $(".lang-kr").removeClass("is-active");
+                });
+                
+                
+          
                 // Nav Open
                 $(".btn-menu").on("click", function(){
                     $("nav.nav").addClass("open");
                     $(".btn-menu").css({"display":"none"});
+                    $(".btn-close").css({"display":"flex"});
+                    
                 })
                 
                 // Nav Close
-                $("nav.nav .btn-close").on("click", function(){
+                $(".btn-close").on("click", function(){
                     $("nav.nav").removeClass("open");
-                    $(".btn-menu").css({"display":""});
-                })                    
-                
-                
-                
+                    $(".btn-menu").css({"display":"flex"});
+                    $(".btn-close").css({"display":"none"});
+                })   
+              
                 $("nav.nav ul li a").click(function(){
                     if($(window).width() < 1024){
                         $("nav.nav").removeClass("open");
                         $(".btn-menu").css({"display":""});
                     }
-                })
+                })                
             })
         </script>
-<!--        <style>html {scroll-behavior: smooth}</style>-->
     </head>
     
-    <body>
-    
+    <body oncontextmenu="return false" ondragstart="return false" onkeydown="return false">
 <!--  banner  -->
     <div class="main-banner">
       <div class="banner-cont">
@@ -69,32 +101,40 @@
               </main>
           <div class="nav-line"></div>
           </div>
-          <div>
+          <div class="header-cont">
               <div class="header">
                   <a href="./index.html" class="header-logo"><img src="./img/img_logo.png"></a>
                   <a href="./index.html" class="header-logo_mo"><img src="./img/img_logo.png"></a>              
               </div>
-              <button class="btn-menu"><span class="material-symbols-outlined">menu</span></button>
-              <nav class="nav">
-                  <div class="display-table">
-                      <div class="display-table-cell">
-                          <!-- .btn-close 클릭시 .nav에 .open이 삭제 -->
-                          <button class="btn-close"><span class="material-symbols-outlined">close</span></button>
-                          <ul>
-                              <!-- .nav__menu 클릭시 .active 클래스가 추가 -->
-                              <li class="nav__menu"><a href="#menu1">Introduce</a></li>
-                              <li class="nav__menu"><a href="#menu2">AI Golf Solution</a></li>
-                              <li class="nav__menu"><a href="#menu3">AI RCWS Solution</a></li>
-                              <li class="nav__menu"><a href="#menu4">Annotation Tool</a></li>
-                          </ul>
+              <section class="nav-cont">
+                  <div class="nav-lang">
+                      <button class="btn-lang"><img src="img/icon-language.png"></button>
+                      <div class="box-lang">
+                          <span id="kr" class="language lang-kr is-active">KR</span>
+                          <span id="en" class="language lang-en">EN</span>
                       </div>
                   </div>
-              </nav>
+                  <div class="nav-menu">
+                      <button class="btn-menu"><span class="material-symbols-outlined">menu</span></button>
+                      <button class="btn-close"><span class="material-symbols-outlined">close</span></button>
+                      <nav class="nav">
+                          <div class="display-table">
+                              <div class="display-table-cell">
+                                  <ul>
+                                      <li class="nav__menu"><a href="#menu1">Introduce</a></li>
+                                      <li class="nav__menu"><a href="#menu2">AI Golf Solution</a></li>
+                                      <li class="nav__menu"><a href="#menu3">AI RCWS Solution</a></li>
+                                      <li class="nav__menu"><a href="#menu4">Annotation Tool</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </nav>
+                  </div>
+              </section>
           </div>
           
           <div class="banner-title">
             <div class="title-wrap">    
-                <!--<img src="./img/img_xdlogo.png" class="xdlogo" alt="XDWORKS">-->
                 <h2 class="banner-tit">AI Technologies</h2>
                 <h3 class="banner-txt_pc">Deep Learning &amp; Machine Vision</h3>
                 <h3 class="banner-txt_mo">Deep Learning<br>&amp; Machine Vision</h3>
@@ -109,13 +149,15 @@
     <a name="menu1" class="scroll_position position01"></a>
     <section class="XD-Introduce">  
         <h3 class="cont-tit">Who we are<img src="./img/tit-dot.png" class="tit-dot"></h3>
-        <p class="introduce-txt_pc"> <b style="font-weight: 400;">(주)XDWORKS</b>는 인공지능 융합 기술 및 
+        <p class="introduce-txt_pc"> 
+            <b style="font-weight: 400;">(주)XDWORKS</b>는 인공지능 융합 기술 및 
             시각화 기술을 연구 개발하는 벤처기업으로 <br>다양한 제품 양산화를 통해 R&amp;D 혁신기업으로 성장해 가고 있습니다.<br>
             <br>  AI Solution을 필요로 하는 고객들을 위해<br>
             <strong style="font-weight: 400;">요구사항 분석, 데이터 구축 및 전처리, 모델 설계 및 학습, 적용 및 분석, AI 시스템 구축</strong>까지의<br>
             전과정을 one-stop service로 지원하고 있습니다.
         </p>
-        <p class="introduce-txt_mo"> <b style="font-weight: 500;">(주)XDWORKS</b>는<br>
+        <p class="introduce-txt_mo"> 
+            <b style="font-weight: 500;">(주)XDWORKS</b>는<br>
             인공지능 융합 기술 및 시각화 기술을 <br>
             연구 개발하는 벤처기업으로<br>
             다양한 제품 양산화를 통해<br>
@@ -216,7 +258,7 @@
                     </ul>
                 </div>
                 <p class="solution_txt">
-                    AI RCWS Solution은 <strong style="font-weight: 400;">장갑차, 자주포, 전술차량, 무인전투체계에 탑재</strong>할 수 있는<br>저전력 고성능의 AI edge device solution으로 다양한 확장 plugin들을 제공합니다. 
+                AI RCWS Solution은 <strong style="font-weight: 400;">장갑차, 자주포, 전술차량, 무인전투체계에 탑재</strong>할 수 있는<br>저전력 고성능의 AI edge device solution으로 다양한 확장 plugin들을 제공합니다. 
                 </p>
                 <p class="solution_txt_mo">
                 AI RCWS Solution은<br>
@@ -250,10 +292,9 @@
             </div>
         </div>
     </section>
-        
-
 <!-- XD'-Solutions fin -->
-   
+
+        
 <!-- XD-info -->
     <section>
         <div class="XD-info_pc">
@@ -282,8 +323,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+    </section>   
 <!-- XD-info fin -->
         
 	</body>
